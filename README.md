@@ -2,7 +2,7 @@
 
 Compile your C++ code into Python `pybind11` module with `mingw-w64` compiler under Windows
 
-## Setting up working environment
+## Working environment
 
 - Windows 7, 10, 64bit
 - Anaconda3, with Python 3.7
