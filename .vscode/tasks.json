@@ -7,7 +7,6 @@
           "type": "shell",
           "label": "g++ Python Module build active file (Windows,mingw-w64-posix-seh,v0udp3nonstatic)",
           "command": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe",
-          //"command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/g++.exe",
           "args": [
             "-O3",
             "-shared",
@@ -23,7 +22,6 @@
             "-LC:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\x86_64-w64-mingw32\\lib",
             "-LD:\\Users\\ADAS\\anaconda3\\Lib",
             "-LD:\\Users\\ADAS\\anaconda3\\libs",
-            // "-LD:\\Users\\ADAS\\Anaconda3\\pkgs\\python-3.7.4-h5263a28_0",
             "-LD:\\Users\\ADAS\\anaconda3\\pkgs\\python-3.7.4-h5263a28_0\\libs",
             "-L.",
             "${fileDirname}\\${fileBasenameNoExtension}.cpp",
@@ -37,7 +35,6 @@
           ],
           "options": {
             "cwd": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin"
-            //"cwd": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin"
           },
           "problemMatcher": [
             "$gcc"
@@ -77,7 +74,6 @@
           ],
           "options": {
             "cwd": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin"
-            //"cwd": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin"
           },
           "problemMatcher": [
             "$gcc"
