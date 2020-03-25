@@ -1,0 +1,145 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+          "type": "shell",
+          "label": "g++ Python Module build active file (Windows,mingw-w64-posix-seh,v0udp3nonstatic)",
+          "command": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe",
+          //"command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/g++.exe",
+          "args": [
+            "-O3",
+            "-shared",
+            "-std=c++11",
+            "-flto",
+            "-fPIC",
+            // `python3 -m pybind11 --includes`
+            "-IC:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\x86_64-w64-mingw32\\include",
+            "-ID:\\Users\\ADAS\\Anaconda3\\Include",
+            "-ID:\\Users\\ADAS\\Anaconda3\\Library\\include",
+            "-ID:\\Users\\ADAS\\anaconda3\\pkgs\\python-3.7.4-h5263a28_0\\include",
+            "-Wall",
+            "-LC:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\x86_64-w64-mingw32\\lib",
+            "-LD:\\Users\\ADAS\\anaconda3\\Lib",
+            "-LD:\\Users\\ADAS\\anaconda3\\libs",
+            // "-LD:\\Users\\ADAS\\Anaconda3\\pkgs\\python-3.7.4-h5263a28_0",
+            "-LD:\\Users\\ADAS\\anaconda3\\pkgs\\python-3.7.4-h5263a28_0\\libs",
+            "-L.",
+            "${fileDirname}\\${fileBasenameNoExtension}.cpp",
+            "-o",
+            // `python3-config --extension-suffix`
+            "${fileDirname}\\${fileBasenameNoExtension}.cp37-win_amd64.pyd",
+            // "-lPython37"
+            "-lpython37",
+            "-lws2_32",
+            "-lpthread"
+          ],
+          "options": {
+            "cwd": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin"
+            //"cwd": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin"
+          },
+          "problemMatcher": [
+            "$gcc"
+          ]
+        },
+		{
+          "type": "shell",
+          "label": "g++ Python Module build active file (Windows10,mingw-w64-posix-seh,v0udp3nonstatic)",
+          "command": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe",
+          //"command": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/g++.exe",
+          "args": [
+            "-O3",
+            "-shared",
+            "-std=c++11",
+            "-flto",
+            "-fPIC",
+            // `python3 -m pybind11 --includes`
+            "-IC:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\x86_64-w64-mingw32\\include",
+            "-IC:\\Users\\Vladimir\\Anaconda3\\Include",
+            "-IC:\\Users\\Vladimir\\Anaconda3\\Library\\include",
+            "-IC:\\Users\\Vladimir\\anaconda3\\pkgs\\python-3.7.6-h60c2a47_2\\include",
+            "-Wall",
+            "-LC:\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\x86_64-w64-mingw32\\lib",
+            "-LC:\\Users\\Vladimir\\anaconda3\\Lib",
+            "-LC:\\Users\\Vladimir\\anaconda3\\libs",
+            // "-LD:\\Users\\ADAS\\Anaconda3\\pkgs\\python-3.7.4-h5263a28_0",
+            "-LC:\\Users\\Vladimir\\anaconda3\\pkgs\\python-3.7.6-h60c2a47_2\\libs",
+            "-L.",
+            "${fileDirname}\\${fileBasenameNoExtension}.cpp",
+            "-o",
+            // `python3-config --extension-suffix`
+            "${fileDirname}\\${fileBasenameNoExtension}.cp37-win_amd64.pyd",
+            // "-lPython37"
+            "-lpython37",
+            "-lws2_32",
+            "-lpthread"
+          ],
+          "options": {
+            "cwd": "C:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin"
+            //"cwd": "C:/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin"
+          },
+          "problemMatcher": [
+            "$gcc"
+          ]
+        },
+        {
+            "type": "shell",
+            "label": "gcc build active file (Linux)",
+            "command": "/usr/bin/gcc",
+            "args": [
+              "-g",
+              "-std=c99",
+              "-Wall",
+              "${fileDirname}/*.c",
+              "${fileDirname}/../commondata.c",
+              "${fileDirname}/../modarray/array.c",
+              // "${fileDirname}/../modarray2/array2.c",
+              "${fileDirname}/../modarray2d/array2d.c",
+              "${fileDirname}/../moddistance2bumper/distance2bumper.c",
+              "-I${fileDirname}",
+              "-I${fileDirname}/../",
+              "-I${fileDirname}/../modarray",
+              // "-I${fileDirname}/../modarray2",
+              "-I${fileDirname}/../modarray2d",
+              "-I${fileDirname}/../moddistance2bumper",
+              "-o",
+              "${fileDirname}/${fileBasenameNoExtension}",
+              "-lm"
+            ],
+            "options": {
+              "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+              "$gcc"
+            ]
+          },
+          {
+            "label": "getPythonCPPExtensionSuffix",
+            "type": "shell",
+            "command": "D:\\Users\\ADAS\\Anaconda3\\python.exe -c \"from distutils import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))\""
+          },
+          {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${input:getExtension}"
+          }
+    ],
+    "inputs": [
+      {
+        "id": "getExtension",
+        "type": "command",
+        "command": "workbench.action.tasks.runTask",
+        "args": "getPythonCPPExtensionSuffix"
+      },
+      {
+        "id": "getExtensionSuffix",
+        "type": "command",
+        "command": "D:\\Users\\ADAS\\Anaconda3\\python.exe -c \"from distutils import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))\""
+        //D:\\Users\\ADAS\\Anaconda3\\python.exe -c "from distutils import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))"
+        // "args": {
+        //   "testFolder": "/out/tests"
+        // }
+      }
+    ]
+}
