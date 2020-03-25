@@ -80,46 +80,15 @@
           ]
         },
         {
-            "type": "shell",
-            "label": "gcc build active file (Linux)",
-            "command": "/usr/bin/gcc",
-            "args": [
-              "-g",
-              "-std=c99",
-              "-Wall",
-              "${fileDirname}/*.c",
-              "${fileDirname}/../commondata.c",
-              "${fileDirname}/../modarray/array.c",
-              // "${fileDirname}/../modarray2/array2.c",
-              "${fileDirname}/../modarray2d/array2d.c",
-              "${fileDirname}/../moddistance2bumper/distance2bumper.c",
-              "-I${fileDirname}",
-              "-I${fileDirname}/../",
-              "-I${fileDirname}/../modarray",
-              // "-I${fileDirname}/../modarray2",
-              "-I${fileDirname}/../modarray2d",
-              "-I${fileDirname}/../moddistance2bumper",
-              "-o",
-              "${fileDirname}/${fileBasenameNoExtension}",
-              "-lm"
-            ],
-            "options": {
-              "cwd": "/usr/bin"
-            },
-            "problemMatcher": [
-              "$gcc"
-            ]
-          },
-          {
             "label": "getPythonCPPExtensionSuffix",
             "type": "shell",
             "command": "D:\\Users\\ADAS\\Anaconda3\\python.exe -c \"from distutils import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))\""
-          },
-          {
+        },
+        {
             "label": "echo",
             "type": "shell",
             "command": "echo ${input:getExtension}"
-          }
+        }
     ],
     "inputs": [
       {
