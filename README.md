@@ -1,4 +1,4 @@
-# Compile your pybond11 module using mingw-w64 compiler (pybind11-mingw-w64)
+# Compile your pybind11 module using mingw-w64 compiler (pybind11-mingw-w64)
 
 Compile your C++ code into Python `pybind11` module with `mingw-w64` compiler under Windows
 
